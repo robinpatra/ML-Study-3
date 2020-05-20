@@ -1,0 +1,30 @@
+baseURL = "/"
+theme = "hugo-tailwind-journal"
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+enableRobotsTXT = true
+
+[taxonomies]
+    tag = "tags"
+
+[permalinks]
+    posts = "/posts/:year/:month/:title/"
+
+[params]
+    author = "Simon Li"
+    avatar = "images/avatar.jpg"
+    description = "k-days Machine Learning Journey"
+    tagline = "k-days Machine Learning Journey"
+
+[languages]
+    [languages.en]
+        contentDir = "content/english"
+        languageCode = "en-gb"
+        languageName = "🇬🇧 English"
+        weight = 1
+
+[frontmatter]
+    date = ["date", "publishDate", "lastmod"]
+    lastmod = [":git", "lastmod", "date", "publishDate"]
+    publishDate = ["publishDate", "date"]
+    expiryDate = ["expiryDate"]

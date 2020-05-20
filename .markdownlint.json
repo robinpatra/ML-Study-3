@@ -1,0 +1,8 @@
+{
+    "default": true,
+    "line-length": {
+        "line_length": 150
+    },
+    "first-line-heading": false,
+    "no-inline-html": false
+}
