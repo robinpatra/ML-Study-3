@@ -1,6 +1,17 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-draft: true
+description: ""
+categories: ["placeholder"]
+tags: ["placeholder"]
+toc: false
+displayInMenu: false
+displayInList: true
+draft: false
+# resources:
+# - name: featuredImage
+#   src: "image.jpg"
+#   params:
+#     description: "Alt text"
 ---
 

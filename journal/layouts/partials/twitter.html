@@ -1,0 +1,6 @@
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Params.Brand }}{{ else }}{{ .Title }} - {{ .Site.Params.Brand }}{{ end }}">
+<meta name="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description | plainify }}{{ end }}">
+<meta name="twitter:site" content="{{ .Site.BaseURL }}">
+<meta name="twitter:creator" content="{{ .Site.Params.metaCreator }}">
+<meta name="twitter:image" content="{{ .Site.Params.metaImage | absURL }}">

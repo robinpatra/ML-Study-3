@@ -18,7 +18,7 @@
     - [Introduction to Machine Learning](https://acloud.guru/learn/intro-machine-learning)
   - ACG Projects
     - [#107 - Does Twitter Hate Cats?](https://acloud.guru/series/acg-projects/view/107)
-    - [#208 - Angry Ferret Detector: Use and Publish AWS Marketplace Machine Learning Resources for Fun and Profit!](https://acloud.guru/series/acg-projects/view/208)
+    - [#208 - Angry Ferret Detector](https://acloud.guru/series/acg-projects/view/208)
     - [#301 The Smile Detector](https://acloud.guru/series/acg-projects/view/301)
   - Series
     - [DeepRacer: The Fast and the Curious](https://acloud.guru/series/deepracer)
@@ -27,6 +27,7 @@
 - Data Camp (Paid. **Free 3 months with GitHub Education Pack**)
   - [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science)
 - Khan Academy (**Free**)
+  - [Solving basic equations & inequalities (one variable, linear)](https://www.khanacademy.org/math/algebra-home/alg-basic-eq-ineq)
   - [6th grade Data and statistics](https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-data-statistics)
   - [High school statistics](https://www.khanacademy.org/math/probability)
   - [Statistics and probability](https://www.khanacademy.org/math/statistics-probability)
