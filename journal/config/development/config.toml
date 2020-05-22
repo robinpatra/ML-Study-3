@@ -1,1 +1,3 @@
-title = "Machine Learning (Local)"
+[params]
+    brand = "k-days Machine Learning Journey (Local)"
+    description = "k-days Machine Learning Journey (Local)"

@@ -1,26 +1,38 @@
-{{ define "heading" }}
-<div>
-    {{ partial "back-home.html" . }}
-    
-    <!-- Title and Publication Date -->
-    <h1 class="text-4xl font-bold">{{ .Title }}</h1>
-    <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "02 Jan 2006" }}</time>
-    
-    <!-- Tags -->
-    {{ with .Params.tags }}
-    <ol class="mt-4">
-        {{ range . }}
-        <li class="inline-block">
-            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
-        </li>
-        {{ end }}
-    </ol>
-    {{ end }}
-</div>
-{{ end }}
-
-{{ define "content" }}
-<article class="mb-12">
-    {{ .Content }}
-</article>
-{{ end }}
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+  {{ partial "head.html" . }}
+  <body class="single-body">
+    {{ partial "nav-bar.html" . }}
+    <main class="content side-text-padding">
+      <article class="post {{ if ne .Params.dropcap false }}dropcase{{ end }}">
+        <header class="post-header">
+          <h1 class="post-title">{{ .Title }}</h1>
+          {{ if isset .Params "date" }}<p class="post-date">Posted <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>{{ end }}
+        </header>
+        {{ with .Resources.GetMatch "featuredImage" -}}
+        <picture class="post-figure">
+          {{ with $.Resources.GetMatch (replace (.Title) (path.Ext (.Title)) ".webp") -}}
+          <source srcset="{{ .Permalink }}" type="image/webp">
+          {{- end }}
+          {{ $featured := .Resize "800x Lanczos" }}
+          <source srcset="{{ $featured.Permalink }}">
+          <img src="{{ $featured.Permalink }}" {{ with .Params.description -}} alt="{{ . }}" {{- end }}>
+        </picture>
+        {{- end }}
+        {{ if .Params.toc -}}
+          <h2>Contents</h2>
+          {{ .TableOfContents }}
+        {{- end }}
+        {{ .Content }}
+      </article>
+    </main>
+    <nav class="end-nav side-padding">
+      {{ with .PrevInSection }}
+      {{ .Render "li-next" }}
+      {{ end }}
+      {{ partial "home-card.html" . }}
+    </nav>
+    {{ partial "footer.html" . }}
+    {{ partial "scripts.html" . }}
+  </body>
+</html>
