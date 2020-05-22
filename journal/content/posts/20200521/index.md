@@ -65,7 +65,7 @@ So, to translate the above to some human language, it is the best we get our han
 From the theory, we have four items in hand:
 
 {{< raw >}}
-\[ Hypothesis: H_\theta(x) = \theta_0 + \theta_1x \]
+\[ Hypothesis: h_\theta(x) = \theta_0 + \theta_1x \]
 \[ Parameter: \theta_0, \theta_1 \]
 \[ Cost\ Function: J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 \]
 \[ Goal: Minimise\ J(\theta_0,\theta_1) \]
@@ -78,7 +78,7 @@ The Hypothesis is a linear equation where `θ_0` is a constant and `θ_1` contro
 To simplify the problem, we remove the constant `θ_0` from the Hypothesis:
 
 {{< raw >}}
-\[ Simplified\ Hypothesis: H_\theta(x) = \theta_1x \]
+\[ Simplified\ Hypothesis: h_\theta(x) = \theta_1x \]
 \[ Parameter: \theta_1 \]
 \[ Cost\ Fn: J(\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 = \frac{1}{2m}\sum_{i=1}^{m}(\theta_1x^{(i)} - y^{(i)})^2 \]
 \[ Goal: Minimise\ J(\theta_1) \]
@@ -153,11 +153,11 @@ Similiar to Question 1:
 Similiar to Question 1 and 2:
 
 {{< raw >}}
-\[ J(0.5) = \frac{1}{2m}\sum_{i=1}^{m}(\theta_1x^{(i)} - y^{(i)})^2\ \]
-\[ J(0.5) = \frac{1}{2m}\sum_{i=1}^{m}(0 * x^{(i)} - y^{(i)})^2\ \]
-\[ J(0.5) = \frac{1}{2*3}((0*1-1)^2+(0*2-2)^2+(0*3-3)^2)\ \]
-\[ J(0.5) = \frac{1}{6}(-1^2+-2^2+-3^3)\ \]
-\[ J(0.5) = \frac{14}{6} \approx 2.33\ \]
+\[ J(0) = \frac{1}{2m}\sum_{i=1}^{m}(\theta_1x^{(i)} - y^{(i)})^2\ \]
+\[ J(0) = \frac{1}{2m}\sum_{i=1}^{m}(0 * x^{(i)} - y^{(i)})^2\ \]
+\[ J(0) = \frac{1}{2*3}((0*1-1)^2+(0*2-2)^2+(0*3-3)^2)\ \]
+\[ J(0) = \frac{1}{6}(-1^2+-2^2+-3^3)\ \]
+\[ J(0) = \frac{14}{6} \approx 2.33\ \]
 {{< /raw >}}
 
 So we found a pattern here for the Cost Function:
