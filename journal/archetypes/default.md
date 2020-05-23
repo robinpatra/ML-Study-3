@@ -8,10 +8,10 @@ toc: false
 displayInMenu: false
 displayInList: true
 draft: false
-# resources:
-# - name: featuredImage
-#   src: "image.jpg"
-#   params:
-#     description: "Alt text"
+resources:
+- name: featuredImage
+  src: "image.jpg"
+  params:
+    description: "Alt text"
 ---
 
