@@ -48,7 +48,7 @@ We will eventually come up with an optimal Hypothesis like this:
 
 {{< smallimg src="graph4.png" alt="Coursera Machine Learning by Andrew Ng" >}}
 
-## Linear Regression - Gradient Descent
+## Gradient Descent
 
 Imagine you are hiking, and you want to go to the lowest valley, and this is how Gradient Descent works.
 
@@ -61,14 +61,18 @@ You may eventually finish at the second or third lowest valley (**Local Minimum*
 The Gradient Descent algorithm is:
 
 {{< raw >}}
+\[ repeat\ until\ convergence\ \{ \]
 \[ \theta_j := \theta_j - \alpha\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) \]
-\[ where\ j = 0, 1\ represents\ the\ index \]
+\[ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \]
+\[ simultaneously\ update\ j = 0\ and\ j = 1 \]
+\[ where\ 0,\ 1\ represents\ the\ index \]
 {{< /raw >}}
 
 In the formula:
 
 {{< raw >}}
 \[ \alpha = learning\ rate \]
+\[ \frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) = derivative\ term \]
 \[ :=\ means\ assign\ value\ to\ the\ variable \]
 {{< /raw >}}
 
