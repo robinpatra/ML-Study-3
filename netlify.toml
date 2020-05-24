@@ -1,0 +1,13 @@
+[build]
+    base = "journal/"
+    publish = "public"
+
+[build.environment]
+    HUGO_VERSION = "0.71.0"
+    HUGO_ENV = "production"
+
+[context.production]
+    command = "hugo --gc --minify"
+
+[context.deploy-preview]
+    command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
