@@ -2,8 +2,7 @@
 title: "NumPy, Statistic, and (S|Uns)upervised again"
 date: 2020-05-20T19:00:02+01:00
 description: ""
-categories: ["data-camp", "coursera", "supervised-learning", "unsupervised-learning"]
-tags: ["python"]
+categories: ["data-camp", "python", "coursera", "supervised-learning", "unsupervised-learning"]
 toc: false
 displayInMenu: false
 displayInList: true
