@@ -1,6 +1,8 @@
 baseURL = "/"
 theme = "aether"
 enableRobotsTXT = true
+languageCode = "en-gb"
+rssLimit = 20
 
 [permalinks]
     posts = "/posts/:year/:month/:day/:title/"
