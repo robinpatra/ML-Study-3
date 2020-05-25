@@ -12,15 +12,17 @@ displayInList: true
 
 ## Two-variable Cost Function
 
-From the [previous article](/posts/2020/05/21/linear-regression-model-representation/), it mentioned the simplified Cost Function.
+From the [previous article](/posts/2020/05/21/linear-regression-model-representation), it mentioned the simplified Cost Function.
 When we put back the constant `θ_0`, the graph of the Cost Function will look like a 3D bowl shape.
 
-{{< raw >}}
-\[ Hypothesis: h_\theta(x) = \theta_0 + \theta_1x \]
-\[ Parameter: \theta_0, \theta_1 \]
-\[ Cost\ Function: J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 \]
-\[ Goal: Minimise\ J(\theta_0,\theta_1) \]
-{{< /raw >}}
+{{< raw >}}\[
+\begin{aligned}
+Hypothesis     &: h_\theta(x) = \theta_0 + \theta_1x \\
+Parameter      &: \theta_0, \theta_1 \\
+Cost~Function  &: J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 \\
+Goal           &: Minimise~J(\theta_0,\theta_1)
+\end{aligned}
+\]{{< /raw >}}
 
 {{< smallimg src="graph1.png" alt="Coursera Machine Learning by Andrew Ng" >}}
 
@@ -61,39 +63,49 @@ You may eventually finish at the second or third lowest valley (**Local Minimum*
 The Gradient Descent algorithm is:
 
 {{< raw >}}
-\[ repeat\ until\ convergence\ \{ \]
-\[ \theta_j := \theta_j - \alpha\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) \]
-\[ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \]
-\[ simultaneously\ update\ j = 0\ and\ j = 1 \]
-\[ where\ 0,\ 1\ represents\ the\ index \]
+\[
+repeat~until~convergence~\lbrace \\
+\theta_j := \theta_j - \alpha\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) \\
+\rbrace~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\
+\]
+\[
+simultaneously~update~j = 0~and~j = 1~where~0,~1~represents~the~index
+\]
 {{< /raw >}}
 
 In the formula:
 
-{{< raw >}}
-\[ \alpha = learning\ rate \]
-\[ \frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) = derivative\ term \]
-\[ :=\ means\ assign\ value\ to\ the\ variable \]
-{{< /raw >}}
+{{< raw >}}\[
+\begin{aligned}
+learning~rate   &= \alpha \\
+derivative~term &= \frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) \\
+\end{aligned} \\
+:=~means~assign~value~to~the~variable
+\]{{< /raw >}}
 
 At each iteration `j`, one should **simultaneously** update the parameters:
 
-{{< raw >}}
-\[ \theta_1, \theta_2, ...\ , \theta_n \]
-{{< /raw >}}
+{{< raw >}}\[
+\theta_1, \theta_2, ...~, \theta_n
+\]{{< /raw >}}
 
 For example, give the following rule:
 
-{{< raw >}}
-\[ \theta_0 = 1, \theta_1 = 2 \]
-\[ \theta_j := \theta_j + \sqrt{\theta_0\theta_1} \]
-{{< /raw >}}
+{{< raw >}}\[
+\begin{aligned}
+\theta_0 &= 1 \\
+\theta_1 &= 2 \\
+\theta_j &:= \theta_j + \sqrt{\theta_0\theta_1}
+\end{aligned}
+\]{{< /raw >}}
 
 The assignment order matters. It should be:
 
-{{< raw >}}
-\[ temp0 := \theta_0 + \sqrt{\theta_0\theta_1} = 1 + \sqrt{1 * 2} \]
-\[ temp1 := \theta_1 + \sqrt{\theta_0\theta_1} = 2 + \sqrt{1 * 2} \]
-\[ \theta_0 := temp0 \]
-\[ \theta_1 := temp1 \]
-{{< /raw >}}
+{{< raw >}}\[
+\begin{aligned}
+temp0    &:= \theta_0 + \sqrt{\theta_0\theta_1} = 1 + \sqrt{1 * 2} \\
+temp1    &:= \theta_1 + \sqrt{\theta_0\theta_1} = 2 + \sqrt{1 * 2} \\
+\theta_0 &:= temp0 \\
+\theta_1 &:= temp1
+\end{aligned}
+\]{{< /raw >}}

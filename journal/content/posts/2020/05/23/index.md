@@ -25,17 +25,17 @@ The learning rate, **α**, is a constant, and the derivative term is a different
 
 The simplified formula:
 
-{{< raw >}}
-\[ \theta_1 := \theta_1 - \alpha\frac{d}{d\theta_j}J(\theta_1) \]
-{{< /raw >}}
+{{< raw >}}\[
+\theta_1 := \theta_1 - \alpha\frac{d}{d\theta_j}J(\theta_1)
+\]{{< /raw >}}
 
 ### Slope
 
 We can learn how steep is the slope from the differentiation equation:
 
-{{< raw >}}
-\[ \frac{d}{d\theta_j}J(\theta_1) \]
-{{< /raw >}}
+{{< raw >}}\[
+\frac{d}{d\theta_j}J(\theta_1)
+\]{{< /raw >}}
 
 From [Interactive Mathematics](https://www.intmath.com/differentiation/differentiation-intro.php), we know that:
 
@@ -55,15 +55,17 @@ Finally, we can reach the local minimum by combining the slope and step.
 
 Assume we start somewhere in the right-hand-side, an initial slope with a positive number, and the learning rate is `3`.
 
-{{< raw >}}
-\[ \theta_1 := \theta_1 - \alpha\frac{d}{d\theta_j}J(\theta_1) \]
-\[ assume\ \alpha = 3,\ \theta_1 = 100,\ and\ initial\ slope = 5 \]
-\[ \theta_1 := 100 - 3 * 5 \]
-\[ \theta_1 := 85 - 3 * 3.5 \]
-\[ ... \]
-\[ \theta_1 := \theta_1 - 3 * 0 \]
-\[ \theta_1 := \theta_1\ (Stop) \]
-{{< /raw >}}
+{{< raw >}}\[
+assume~\alpha = 3,~\theta_1 = 100,~and~initial~slope = 5 \\
+\begin{aligned}
+\theta_1 &:= \theta_1 - \alpha\frac{d}{d\theta_j}J(\theta_1) \\
+\theta_1 &:= 100 - 3 * 5 \\
+\theta_1 &:= 85 - 3 * 3.5 \\
+&~~~~~~~~... \\
+\theta_1 &:= \theta_1 - 3 * 0 \\
+\theta_1 &:= \theta_1\ (Stop)
+\end{aligned}
+\]{{< /raw >}}
 
 The formula will automatically take smaller steps as it is proportional to the slope. So no need to decrease **α** over time.
 
@@ -75,38 +77,46 @@ To summarise, we have the **Linear Regression Model** and the **Gradient Descent
 
 ### Linear Regression Model
 
-{{< raw >}}
-\[ h_\theta(x) = \theta_0 + \theta_1x \]
-\[ J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 \]
-{{< /raw >}}
+{{< raw >}}\[
+\begin{aligned}
+   h_\theta(x) &= \theta_0 + \theta_1x \\
+   J(\theta_0,\theta_1) &= \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2
+\end{aligned}
+\]{{< /raw >}}
 
 ### Gradient Descent Algorithm
 
-{{< raw >}}
-\[ repeat\ until\ convergence\ \{ \]
-\[ \theta_j := \theta_j - \alpha\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) \]
-\[ (for\ j = 0\ and\ j = 1) \]
-\[ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \]
-{{< /raw >}}
+{{< raw >}}\[
+repeat~until~convergence~\lbrace \\
+\theta_j := \theta_j - \alpha\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) \\
+(for~j = 0~and~j = 1) \\
+\rbrace~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\]{{< /raw >}}
 
 ### Apply Gradient Descent to Minimise Square Error Cost Function
 
-{{< raw >}}
-\[ \frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) = \frac{\partial}{\partial\theta_j} * \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 \]
-\[ = \frac{\partial}{\partial\theta_j} * \frac{1}{2m}\sum_{i=1}^{m}(\theta_0 + \theta_1 * x^{(i)} - y^{(i)})^2 \]
-\[ therefore \]
-\[ j = 0 : \frac{\partial}{\partial\theta_0}J(\theta_0,\theta_1) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) \]
-\[ j = 1 : \frac{\partial}{\partial\theta_1}J(\theta_0,\theta_1) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) * x^{(i)} \]
-{{< /raw >}}
+{{< raw >}}\[
+\begin{aligned}
+\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) &= \frac{\partial}{\partial\theta_j} * \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 \\
+&= \frac{\partial}{\partial\theta_j} * \frac{1}{2m}\sum_{i=1}^{m}(\theta_0 + \theta_1 * x^{(i)} - y^{(i)})^2 \\
+\\
+&~~~~~~~~~~~~~~~therefore \\
+\\
+j &= 0 : \frac{\partial}{\partial\theta_0}J(\theta_0,\theta_1) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) \\
+j &= 1 : \frac{\partial}{\partial\theta_1}J(\theta_0,\theta_1) = \frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) * x^{(i)}
+\end{aligned}
+\]{{< /raw >}}
 
 ### Gradient Descent Algorithm for Linear Regression
 
-{{< raw >}}
-\[ repeat\ until\ convergence\ \{ \]
-\[ \theta_0 := \theta_0 - \alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) \]
-\[ \theta_1 := \theta_1 - \alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) * x^{(i)} \]
-\[ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \]
-{{< /raw >}}
+{{< raw >}}\[
+repeat~~~until~~~convergence~~~~~~~~~~~~~~~~~~~~~~~\lbrace \\
+\begin{aligned}
+\theta_0 &:= \theta_0 - \alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) \\
+\theta_1 &:= \theta_1 - \alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) * x^{(i)} \\
+\end{aligned} \\
+\rbrace~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\]{{< /raw >}}
 
 ## Week 1 Assignment
 

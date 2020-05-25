@@ -2,8 +2,8 @@
 title: "Python for Data Science"
 date: 2020-05-19T19:00:02+01:00
 description: ""
-categories: ["a-cloud-guru", "data-camp", "neural-network"]
-tags: ["python", "numpy", "perceptron-neural-network", "convolutional-neural-network", "recurrent-neural-network", "generative-adversarial-network"]
+categories: ["a-cloud-guru", "neural-network", "data-camp", "python"]
+tags: ["numpy", "perceptron-neural-network", "convolutional-neural-network", "recurrent-neural-network", "generative-adversarial-network"]
 toc: false
 displayInMenu: false
 displayInList: true
