@@ -3,6 +3,10 @@
     "line-length": {
         "line_length": 150
     },
+    "header-style": false,
+    "single-h1": false,
+    "blanks-around-headings": false,
     "first-line-heading": false,
+    "header-increment": false,
     "no-inline-html": false
 }

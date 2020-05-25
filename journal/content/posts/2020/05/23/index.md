@@ -59,8 +59,8 @@ Assume we start somewhere in the right-hand-side, an initial slope with a positi
 assume~\alpha = 3,~\theta_1 = 100,~and~initial~slope = 5 \\
 \begin{aligned}
 \theta_1 &:= \theta_1 - \alpha\frac{d}{d\theta_j}J(\theta_1) \\
-\theta_1 &:= 100 - 3 * 5 \\
-\theta_1 &:= 85 - 3 * 3.5 \\
+\theta_1 &:= 100-3*5 \\
+\theta_1 &:= 85-3*3.5 \\
 &~~~~~~~~... \\
 \theta_1 &:= \theta_1 - 3 * 0 \\
 \theta_1 &:= \theta_1\ (Stop)
@@ -97,8 +97,8 @@ repeat~until~convergence~\lbrace \\
 
 {{< raw >}}\[
 \begin{aligned}
-\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) &= \frac{\partial}{\partial\theta_j} * \frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 \\
-&= \frac{\partial}{\partial\theta_j} * \frac{1}{2m}\sum_{i=1}^{m}(\theta_0 + \theta_1 * x^{(i)} - y^{(i)})^2 \\
+\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1) &= \frac{\partial}{\partial\theta_j}*\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 \\
+&= \frac{\partial}{\partial\theta_j}*\frac{1}{2m}\sum_{i=1}^{m}(\theta_0 + \theta_1 * x^{(i)} - y^{(i)})^2 \\
 \\
 &~~~~~~~~~~~~~~~therefore \\
 \\
@@ -113,7 +113,7 @@ j &= 1 : \frac{\partial}{\partial\theta_1}J(\theta_0,\theta_1) = \frac{1}{m}\sum
 repeat~~~until~~~convergence~~~~~~~~~~~~~~~~~~~~~~~\lbrace \\
 \begin{aligned}
 \theta_0 &:= \theta_0 - \alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) \\
-\theta_1 &:= \theta_1 - \alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)}) * x^{(i)} \\
+\theta_1 &:= \theta_1 - \alpha\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})*x^{(i)} \\
 \end{aligned} \\
 \rbrace~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \]{{< /raw >}}
@@ -122,4 +122,4 @@ repeat~~~until~~~convergence~~~~~~~~~~~~~~~~~~~~~~~\lbrace \\
 
 {{< smallimg src="week1-assigment.png" alt="week 1 assignment result" >}}
 
-🥰 
+🥰
