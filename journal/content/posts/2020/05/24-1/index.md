@@ -146,7 +146,7 @@ error
     2 & 5 \\
     3 & 1 \\
 \end{bmatrix}
-* 3
+*3
 =
 \begin{bmatrix}
     3 & 0 \\
@@ -244,9 +244,9 @@ Steps:
 
 {{< raw >}}\[
 \begin{aligned}
-1 * 1 + 3 * 5 &= 16 \\
-4 * 1 + 0 * 5 &= 4 \\
-2 * 1 + 1 * 5 &= 7 \\
+1*1 + 3*5 &= 16 \\
+4*1 + 0*5 &= 4 \\
+2*1 + 1*5 &= 7 \\
 \end{aligned}
 \]{{< /raw >}}
 
@@ -260,12 +260,15 @@ Given the example and Hypothesis below:
 h_\theta(x) = -40 + 0.25x
 \]{{< /raw >}}
 
-| House Size |
-|------------|
-| 2104 |
-| 1416 |
-| 1534 |
-| 852 |
+{{< raw >}}\[
+House~Size \\
+\begin{cases}
+    2104 \\
+    1416 \\
+    1534 \\
+    852 \\
+\end{cases}
+\]{{< /raw >}}
 
 We can use the Matrix Multiplication to simplify the computation of the expected house price.
 
@@ -286,10 +289,10 @@ By multiplying the two matrices, we will get the prediction in a **4x1 matrix**.
 \end{bmatrix}
 =
 \begin{bmatrix}
-    1 * -40 + 2104 * 0.25 \\
-    1 * -40 + 1416 * 0.25 \\
-    1 * -40 + 1534 * 0.25 \\
-    1 * -40 + 852 * 0.25 \\
+    1*-40 + 2104*0.25 \\
+    1*-40 + 1416*0.25 \\
+    1*-40 + 1534*0.25 \\
+    1*-40 + 852*0.25 \\
 \end{bmatrix}
 =
 \begin{bmatrix}
@@ -302,7 +305,7 @@ By multiplying the two matrices, we will get the prediction in a **4x1 matrix**.
 
 We can then use one line of code to calculate it.
 
-```
+```python
 predication = data_matrix * parameters
 # `*` means Matrix Multiplication
 ```

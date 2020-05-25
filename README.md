@@ -15,7 +15,7 @@
 
 - A Cloud Guru (Paid)
   - Course
-    - [Introduction to Machine Learning](https://acloud.guru/learn/intro-machine-learning)
+    - ~~[Introduction to Machine Learning](https://acloud.guru/learn/intro-machine-learning)~~
   - ACG Projects
     - [#107 - Does Twitter Hate Cats?](https://acloud.guru/series/acg-projects/view/107)
     - [#208 - Angry Ferret Detector](https://acloud.guru/series/acg-projects/view/208)
@@ -25,9 +25,13 @@
 - Coursera
   - [Machine Learning by Andrew Ng](https://www.coursera.org/learn/machine-learning) (**Free**)
 - Data Camp (Paid. **Free 3 months with GitHub Education Pack**)
-  - [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science)
+  - ~~[Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science)~~
+  - [Intermediate Python](https://learn.datacamp.com/courses/intermediate-python-for-data-science)
+- Kaggle
+  - [Python](https://www.kaggle.com/learn/python)
+  - [Intro to Machine Learning](https://www.kaggle.com/learn/intro-to-machine-learning)
+  - [Intermediate Machine Learning](https://www.kaggle.com/learn/intermediate-machine-learning)
 - Khan Academy (**Free**)
-  - [Solving basic equations & inequalities (one variable, linear)](https://www.khanacademy.org/math/algebra-home/alg-basic-eq-ineq)
   - [6th grade Data and statistics](https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-data-statistics)
   - [High school statistics](https://www.khanacademy.org/math/probability)
   - [Statistics and probability](https://www.khanacademy.org/math/statistics-probability)
