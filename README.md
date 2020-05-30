@@ -27,7 +27,7 @@
 - Data Camp (Paid. **Free 3 months with GitHub Education Pack**)
   - [x] [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science)
   - [ ] [Intermediate Python](https://learn.datacamp.com/courses/intermediate-python-for-data-science)
-- Kaggle
+- Kaggle (**Free**)
   - [ ] [Python](https://www.kaggle.com/learn/python)
   - [ ] [Intro to Machine Learning](https://www.kaggle.com/learn/intro-to-machine-learning)
   - [ ] [Intermediate Machine Learning](https://www.kaggle.com/learn/intermediate-machine-learning)
@@ -50,7 +50,7 @@ git clone --recurse-submodules -j8 git@github.com:siutsin/k_days_machine_learnin
 git submodule update --init --recursive
 ```
 
-Install Hugo via [homebrew](https://brew.sh/) (macOS). Other OS refer to the [Official Doc](https://gohugo.io/getting-started/installing/).
+Install Hugo via [homebrew](https://brew.sh/) (macOS). Other OS refers to the [Official Doc](https://gohugo.io/getting-started/installing/).
 
 ```bash
 brew install hugo
