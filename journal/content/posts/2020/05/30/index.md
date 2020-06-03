@@ -1000,3 +1000,9 @@ Not quite understand the math here, need to revisit.
 {{< smallimg src="quiz.png" alt="quiz result" >}}
 
 Hmm, made two mistakes and both of them related to Computing on Data. Revisit tomorrow...
+
+### 2nd try
+
+{{< smallimg src="quiz2.png" alt="quiz result" >}}
+
+🥰
