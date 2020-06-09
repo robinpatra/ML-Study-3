@@ -2,7 +2,7 @@
 title: "Normal Equation"
 date: 2020-05-28T23:01:56+01:00
 description: ""
-categories: ["coursera", "supervised-learning"]
+categories: ["coursera", "supervised-learning", "linear-regression"]
 tags: ["normal-equation"]
 toc: true
 dropCap: true

@@ -2,8 +2,8 @@
 title: "Multivariate Linear Regression"
 date: 2020-05-27T21:35:07+01:00
 description: ""
-categories: ["coursera", "supervised-learning"]
-tags: ["regression", "linear-regression", "gradient-descent"]
+categories: ["coursera", "supervised-learning", "linear-regression"]
+tags: ["gradient-descent"]
 toc: true
 dropCap: true
 displayInMenu: false

@@ -2,8 +2,8 @@
 title: "Linear Algebra Review - Matrices & Vectors"
 date: 2020-05-24T21:04:56+01:00
 description: ""
-categories: ["coursera", "math"]
-tags: ["linear-algebra", "matrix"]
+categories: ["coursera", "linear-algebra"]
+tags: ["matrix"]
 toc: true
 dropCap: true
 displayInMenu: false
