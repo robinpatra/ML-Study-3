@@ -2,8 +2,8 @@
 title: "Gradient Descent, Cont’d"
 date: 2020-05-23T21:19:53+01:00
 description: ""
-categories: ["coursera", "supervised-learning"]
-tags: ["regression", "linear-regression", "gradient-descent"]
+categories: ["coursera", "supervised-learning", "linear-regression"]
+tags: ["gradient-descent"]
 toc: true
 dropCap: true
 displayInMenu: false

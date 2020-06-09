@@ -2,8 +2,8 @@
 title: "Week 2 Programming Assignment"
 date: 2020-06-04T13:40:24+01:00
 description: ""
-categories: ["coursera", "octave", "supervised-learning"]
-tags: ["regression", "linear-regression", "gradient-descent"]
+categories: ["coursera", "octave", "supervised-learning", "linear-regression"]
+tags: ["gradient-descent"]
 toc: false
 dropCap: false
 displayInMenu: false

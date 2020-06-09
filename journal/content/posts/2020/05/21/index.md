@@ -2,8 +2,8 @@
 title: "Linear Regression Model Representation"
 date: 2020-05-21T17:11:04+01:00
 description: ""
-categories: ["coursera", "supervised-learning"]
-tags: ["regression", "linear-regression"]
+categories: ["coursera", "supervised-learning", "linear-regression"]
+tags: []
 toc: true
 displayInMenu: false
 displayInList: true

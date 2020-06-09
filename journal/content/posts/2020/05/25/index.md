@@ -2,8 +2,8 @@
 title: "Matrices & Vectors, Cont’d"
 date: 2020-05-25T20:00:52+01:00
 description: ""
-categories: ["coursera", "math"]
-tags: ["linear-algebra", "matrix"]
+categories: ["coursera", "linear-algebra"]
+tags: ["matrix"]
 toc: true
 dropCap: false
 displayInMenu: false
