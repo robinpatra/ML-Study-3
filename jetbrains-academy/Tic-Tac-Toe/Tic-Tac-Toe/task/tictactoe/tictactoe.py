@@ -1,56 +1,32 @@
-def show_cells(c):
+def show_board(b):
     print("---------")
-    print("|", c[0], c[1], c[2], "|")
-    print("|", c[3], c[4], c[5], "|")
-    print("|", c[6], c[7], c[8], "|")
+    print("|", b[0][0], b[0][1], b[0][2], "|")
+    print("|", b[1][0], b[1][1], b[1][2], "|")
+    print("|", b[2][0], b[2][1], b[2][2], "|")
     print("---------")
 
 
 def translate_coordinate(_x, _y):
-    # this is ugly, but quick and dirty
-    if _x == 1:
-        if _y == 1:
-            return 6
-        elif _y == 2:
-            return 3
-        else:
-            return 0
-    elif _x == 2:
-        if _y == 1:
-            return 7
-        elif _y == 2:
-            return 4
-        else:
-            return 1
-    else:
-        if _y == 1:
-            return 8
-        elif _y == 2:
-            return 5
-        else:
-            return 2
+    # x=1 j=0, x=2 j=1, x=3 j=2
+    # y=1 i=2, y=2 i=1, y=3 i=0
+    return 3 - _y, _x - 1
 
 
-def check_winner(c):
+def check_winner(b):
     lines = [
         # horizontal
-        [c[0] != "_" and c[0] == c[1] and c[1] == c[2], c[0]],
-        [c[3] != "_" and c[3] == c[4] and c[4] == c[5], c[3]],
-        [c[6] != "_" and c[6] == c[7] and c[7] == c[8], c[6]],
+        [b[0][0] != "_" and b[0][0] == b[0][1] and b[0][1] == b[0][2], b[0][0]],
+        [b[1][0] != "_" and b[1][0] == b[1][1] and b[1][1] == b[1][2], b[1][0]],
+        [b[2][0] != "_" and b[2][0] == b[2][1] and b[2][1] == b[2][2], b[2][0]],
         # vertical
-        [c[0] != "_" and c[0] == c[3] and c[3] == c[6], c[0]],
-        [c[1] != "_" and c[1] == c[4] and c[4] == c[7], c[1]],
-        [c[2] != "_" and c[2] == c[5] and c[5] == c[8], c[2]],
+        [b[0][0] != "_" and b[0][0] == b[1][0] and b[1][0] == b[2][0], b[0][0]],
+        [b[0][1] != "_" and b[0][1] == b[1][1] and b[1][1] == b[2][1], b[0][1]],
+        [b[0][2] != "_" and b[0][2] == b[1][2] and b[1][2] == b[2][2], b[0][2]],
         # diagonal
-        [c[0] != "_" and c[0] == c[4] and c[4] == c[8], c[0]],
-        [c[2] != "_" and c[2] == c[4] and c[4] == c[6], c[2]]
+        [b[0][0] != "_" and b[0][0] == b[1][1] and b[1][1] == b[2][2], b[0][0]],
+        [b[0][2] != "_" and b[0][2] == b[1][1] and b[1][1] == b[2][0], b[0][2]]
     ]
     return [player for [result, player] in lines if result]
-
-
-def winner_sanity_check(result):
-    s = set(result)
-    return len(s) == 1
 
 
 def coordinate_check(input_string):
@@ -67,51 +43,34 @@ def coordinate_check(input_string):
         return "You should enter numbers!", None
 
 
-def game(cells):
-    x_count = 0
-    o_count = 0
+board = [
+    ["_", "_", "_"],
+    ["_", "_", "_"],
+    ["_", "_", "_"]
+]
+is_x_move = True
+move_count = 0
 
-    for cell in cells:
-        if cell == 'X':
-            x_count += 1
-        elif cell == 'O':
-            o_count += 1
-
-    if abs(x_count - o_count) > 1:
-        print("Impossible")
-        return True
-    else:
-        winner = check_winner(cells)
-        if len(winner) == 0:
-            if x_count + o_count == 9:
-                print("Draw")
-                return True
-            else:
-                return False
-        else:
-            if winner_sanity_check(winner):
+show_board(board)
+while True:
+    new_move = input("Enter the coordinates: > ")
+    message, coordinates = coordinate_check(new_move)
+    if message == "OK":
+        x, y = coordinates
+        i, j = translate_coordinate(x, y)
+        if board[i][j] == "_":
+            board[i][j] = "X" if is_x_move else "O"
+            is_x_move = not is_x_move
+            move_count += 1
+            show_board(board)
+            winner = check_winner(board)
+            if len(winner) > 0:
                 print(winner[0], "wins")
-            else:
-                print("Impossible")
-            return True
-
-
-board = input("Enter cells: > ")
-show_cells(board)
-is_finished = game(board)
-
-if not is_finished:
-    while True:
-        new_move = input("Enter the coordinates: > ")
-        message, coordinates = coordinate_check(new_move)
-        if message == "OK":
-            x, y = coordinates
-            index = translate_coordinate(x, y)
-            if board[index] == "_":
-                board = board[:index] + "X" + board[index + 1:]
-                show_cells(board)
                 break
-            else:
-                message = "This cell is occupied! Choose another one!"
+            elif move_count == 9:
+                print("Draw")
+                break
+        else:
+            message = "This cell is occupied! Choose another one!"
+    if message != "OK":
         print(message)
-
