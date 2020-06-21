@@ -1,18 +1,29 @@
 def input_two_matrices():
     a = []
     b = []
-
     a_row, a_col = [int(x) for x in input("Enter size of first matrix: > ").split()]
     print("Enter first matrix:")
     for _ in range(a_row):
         a.append([float(x) for x in input("> ").split()])
-
     b_row, b_col = [int(x) for x in input("Enter size of second matrix: > ").split()]
     print("Enter second matrix:")
     for _ in range(b_row):
         b.append([float(x) for x in input("> ").split()])
-
     return a, b
+
+
+def input_single_matrix():
+    a = []
+    a_row, a_col = [int(x) for x in input("Enter size of matrix: > ").split()]
+    for _ in range(a_row):
+        a.append([float(x) for x in input("> ").split()])
+    return a
+
+
+def print_matrix(matrix):
+    print("The result is:")
+    for row in matrix:
+        print(" ".join([str(x) for x in row]))
 
 
 def add_matrices():
@@ -29,19 +40,13 @@ def add_matrices():
 
     if len(a) == len(b) and len(a[0]) == len(b[0]):
         added_matrix = add(a, b)
-        print("The result is:")
-        for row in added_matrix:
-            print(" ".join([str(x) for x in row]))
+        print_matrix(added_matrix)
     else:
         print("ERROR")
 
 
 def multiply_matrix_by_a_constant():
-    a = []
-
-    a_row, a_col = [int(x) for x in input("Enter size of matrix: > ").split()]
-    for _ in range(a_row):
-        a.append([float(x) for x in input("> ").split()])
+    a = input_single_matrix()
     scalar = float(input("Enter constant: > "))
 
     def scalar_multiplication(_a, _scalar):
@@ -54,9 +59,7 @@ def multiply_matrix_by_a_constant():
         return result
 
     scalar_multiplication_result_matrix = scalar_multiplication(a, scalar)
-    print("The result is:")
-    for row in scalar_multiplication_result_matrix:
-        print(" ".join([str(x) for x in row]))
+    print_matrix(scalar_multiplication_result_matrix)
 
 
 def multiply_matrices():
@@ -77,17 +80,71 @@ def multiply_matrices():
 
     if len(a[0]) == len(b):
         multiplied_matrix = multiply(a, b)
-        print("The result is:")
-        for row in multiplied_matrix:
-            print(" ".join([str(x) for x in row]))
+        print_matrix(multiplied_matrix)
     else:
         print("ERROR")
+
+
+def get_zero_transpose_matrix(matrix):
+    m = len(matrix)
+    n = len(matrix[0])
+    matrix_t = [[0.0] * m for _ in range(n)]
+    return matrix_t, n, m
+
+
+def main_diagonal_transpose():
+    a = input_single_matrix()
+    a_t, m_t, n_t = get_zero_transpose_matrix(a)
+    for i in range(m_t):
+        for j in range(n_t):
+            a_t[i][j] = a[j][i]
+    print_matrix(a_t)
+
+
+def side_diagonal_transpose():
+    a = input_single_matrix()
+    a_t, m_t, n_t = get_zero_transpose_matrix(a)
+    for i in range(m_t):
+        for j in range(n_t):
+            old_i = n_t - 1 - j
+            old_j = m_t - 1 - i
+            a_t[i][j] = a[old_i][old_j]
+    print_matrix(a_t)
+
+
+def vertical_diagonal_transpose():
+    a = input_single_matrix()
+    a_t = [reversed(row) for row in a]
+    print_matrix(a_t)
+
+
+def horizontal_diagonal_transpose():
+    a = input_single_matrix()
+    a_t = reversed(a)
+    print_matrix(a_t)
+
+
+def transpose_matrix():
+    print("1. Main diagonal")
+    print("2. Side diagonal")
+    print("3. Vertical line")
+    print("4. Horizontal line")
+    transpose_choice = input("Your choice: > ")
+    if transpose_choice == "1":
+        main_diagonal_transpose()
+    elif transpose_choice == "2":
+        side_diagonal_transpose()
+    elif transpose_choice == "3":
+        vertical_diagonal_transpose()
+    elif transpose_choice == "4":
+        horizontal_diagonal_transpose()
 
 
 while True:
     print("1. Add matrices")
     print("2. Multiply matrix by a constant")
     print("3. Multiply matrices")
+    print("4. Transpose matrix")
     print("0. Exit")
     choice = input("Your choice: > ")
     if choice == "0":
@@ -98,4 +155,6 @@ while True:
         multiply_matrix_by_a_constant()
     elif choice == "3":
         multiply_matrices()
+    elif choice == "4":
+        transpose_matrix()
     print()
