@@ -4,11 +4,16 @@ date: 2020-06-20T21:06:10+01:00
 description: ""
 categories: ["jetbrains-academy", "python"]
 tags: []
-toc: false
-dropCap: true
+toc: true
+dropCap: false
 displayInMenu: false
 displayInList: true
 ---
+
+Updated at 21 Jun 2020. GitHub Project link:
+
+- [Tic-Tac-Toe](https://github.com/siutsin/k_days_machine_learning_journey/tree/master/jetbrains-academy/Tic-Tac-Toe)
+- [Numeric Matrix Processor](https://github.com/siutsin/k_days_machine_learning_journey/tree/master/jetbrains-academy/Numeric%20Matrix%20Processor)
 
 Spend last few days on Jetbrains Academy's Python project [Tic-Tac-Toe](https://hyperskill.org/projects/73).
 Cute and fun, and I learnt quite a few new python syntax and built-in function.

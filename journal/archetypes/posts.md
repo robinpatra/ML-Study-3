@@ -4,14 +4,8 @@ date: {{ .Date }}
 description: ""
 categories: []
 tags: []
-toc: false
-dropCap: true
+toc: true
+dropCap: false
 displayInMenu: false
 displayInList: true
-draft: true
-resources:
-- name: featuredImage
-  src: ""
-  params:
-    description: ""
 ---
