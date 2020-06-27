@@ -28,7 +28,7 @@
   - [x] [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science)
   - [x] [Intermediate Python](https://learn.datacamp.com/courses/intermediate-python-for-data-science)
   - [x] [Python Data Science Toolbox (Part 1)](https://www.datacamp.com/courses/python-data-science-toolbox-part-1)
-  - [ ] [Python Data Science Toolbox (Part 2)](https://www.datacamp.com/courses/python-data-science-toolbox-part-2)
+  - [x] [Python Data Science Toolbox (Part 2)](https://www.datacamp.com/courses/python-data-science-toolbox-part-2)
 - JetBrains Academy (Paid. **Free access and free PyCharm Edu IDE until January 1, 2021**)
   - [ ] [Python Developer](https://www.jetbrains.com/academy/)
 - Kaggle (**Free**)
